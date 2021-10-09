@@ -40,3 +40,10 @@ class Pictures(models.Model):
         picture = cls.objects.filter(id=id)
         
         return picture
+    
+    
+    @classmethod
+    def search_picture(cls,term):
+        term = cls.objects.filter(name_icontains = term)
+        
+        return term
