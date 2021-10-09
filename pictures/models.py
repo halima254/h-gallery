@@ -10,3 +10,11 @@ class Editor(models.Model):
     
     def __str__(self):
         return self.first_name
+    
+class Pictures(models.Model):
+    name = models.CharField(max_length=60)
+    description = models.CharField(max_length=100)
+    image = models.ImageField(upload_to ='pictures/')    
+    editor = models.ForeignKey('Editor', on_delete = models.CASCADE)
+    
+    
