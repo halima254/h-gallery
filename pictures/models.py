@@ -16,7 +16,10 @@ class Pictures(models.Model):
     description = models.CharField(max_length=100)
     image = models.ImageField(upload_to ='pictures/')    
     editor = models.ForeignKey('Editor', on_delete = models.CASCADE)
+    category= models.ForeignKey('Category',on_delete= models.CASCADE, default=None)
+    location= models.ForeignKey('Location',on_delete= models.CASCADE, default=None)
     
+                             
     def save_image(self):
         ''' 
         saving images
@@ -49,14 +52,18 @@ class Pictures(models.Model):
         return term
     
     
-class Category(models.Model):
-    category_name= models.CharField(max_length= 80)
+class Location(models.Model):
+    location_name= models.CharField(max_length= 80)
     
-    def save_category(self):
+    def save_location(self):
         self.save()
         
     @classmethod
-    def get_category(cls):
-        catgories = cls.objects.all()
-        return categories
+    def get_location(cls):
+        locations = cls.objects.all()
+        return locations
         
+    def __str__(self):
+        return self.location_name
+    
+    
