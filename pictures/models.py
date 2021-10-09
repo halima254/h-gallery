@@ -47,3 +47,9 @@ class Pictures(models.Model):
         term = cls.objects.filter(name_icontains = term)
         
         return term
+    
+    
+class Category(models.Model):
+    category_name= models.CharField(max_length= 80)
+    
+    def
