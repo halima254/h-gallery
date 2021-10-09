@@ -23,6 +23,10 @@ class Pictures(models.Model):
         '''
         self.save()
      
-        
+    def delete_image(self):
+        '''
+        delete images
+        '''
+        self.delete()    
     
     
