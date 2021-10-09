@@ -27,6 +27,11 @@ class Pictures(models.Model):
         '''
         delete images
         '''
-        self.delete()    
-    
+        self.delete() 
+           
+    @classmethod
+    def all_pictures(cls,id):
+        pictures = cls.objects.all()
+        
+        return pictures
     
