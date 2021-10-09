@@ -52,4 +52,7 @@ class Pictures(models.Model):
 class Category(models.Model):
     category_name= models.CharField(max_length= 80)
     
-    def
+    def save_category(self):
+        self.save()
+        
+        
