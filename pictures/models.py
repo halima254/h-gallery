@@ -35,3 +35,8 @@ class Pictures(models.Model):
         
         return pictures
     
+    @classmethod
+    def one_picture(cls,id):
+        picture = cls.objects.filter(id=id)
+        
+        return picture
