@@ -17,4 +17,12 @@ class Pictures(models.Model):
     image = models.ImageField(upload_to ='pictures/')    
     editor = models.ForeignKey('Editor', on_delete = models.CASCADE)
     
+    def save_image(self):
+        ''' 
+        saving images
+        '''
+        self.save()
+     
+        
+    
     
