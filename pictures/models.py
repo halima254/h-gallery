@@ -55,4 +55,8 @@ class Category(models.Model):
     def save_category(self):
         self.save()
         
+    @classmethod
+    def get_category(cls):
+        catgories = cls.objects.all()
+        return categories
         
