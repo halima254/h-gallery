@@ -15,4 +15,9 @@ def index(request):
     return render(request, 'index.html',{'pictures':pictures,'category':category,'location':location})
 
 def pictures_location(request,location):
-    location_pictures = Pictures.
+    location_pictures = Pictures.picture_bylocation(location)
+    
+    return render(request,'location.html',{'location_pictures':location_pictures} )
+
+
+    
