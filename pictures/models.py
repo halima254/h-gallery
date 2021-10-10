@@ -51,6 +51,10 @@ class Pictures(models.Model):
         
         return term
     
+    @classmethod
+    def picture_bylocation(cls,location):
+        location_pictures= cls.objects.filter(location=location)
+        return location_pictures
     
 class Location(models.Model):
     location_name= models.CharField(max_length= 80)
