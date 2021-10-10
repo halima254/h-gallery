@@ -46,4 +46,4 @@ def search_picture(request):
     else:
         message = 'Image not found'
         
-        return render(request,'get-image.html',{'message':message})    
+        return render(request,'get_image.html',{'message':message})    
