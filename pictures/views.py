@@ -13,3 +13,5 @@ def index(request):
     location = Location.get_location()
     
     return render(request, 'index.html',{'pictures':pictures,'category':category,'location':location})
+
+
