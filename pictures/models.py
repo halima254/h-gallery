@@ -33,7 +33,7 @@ class Pictures(models.Model):
         self.delete() 
            
     @classmethod
-    def all_pictures(cls,id):
+    def all_pictures(cls):
         pictures = cls.objects.all()
         
         return pictures
