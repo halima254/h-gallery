@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,Http404
 from .models import Editor, Pictures, Location, Category
 
 # Create your views here.
@@ -24,5 +24,13 @@ def pictures_category(request,category):
     
     return render(request,'category.html',{'category_pictures':category_pictures} )
 
-
+def single_picture(request,id):
+    
+    try:
+        single_pic = Pictures.objects.get(id=id)
+    
+    except DoesNotExist:
+        raise Http404()
+    
+    return render(request,'single_pic.html',{'single_pic':single_pic})    
     
