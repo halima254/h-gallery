@@ -66,4 +66,19 @@ class Location(models.Model):
     def __str__(self):
         return self.location_name
     
+        
+class Category(models.Model):
+    category_name= models.CharField(max_length= 80)
+    
+    def save_category(self):
+        self.save()
+        
+    @classmethod
+    def get_category(cls):
+        categories = cls.objects.all()
+        return categories
+        
+    def __str__(self):
+        return self.category_name
+    
     
