@@ -56,6 +56,12 @@ class Pictures(models.Model):
         location_pictures= cls.objects.filter(location=location)
         return location_pictures
     
+    
+    @classmethod
+    def picture_bycategory(cls,category):
+        category_pictures= cls.objects.filter(category=category)
+        return category_pictures
+    
 class Location(models.Model):
     location_name= models.CharField(max_length= 80)
     
