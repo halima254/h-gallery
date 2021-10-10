@@ -19,5 +19,10 @@ def pictures_location(request,location):
     
     return render(request,'location.html',{'location_pictures':location_pictures} )
 
+def pictures_category(request,category):
+    category_pictures = Pictures.picture_bycategory(category)
+    
+    return render(request,'category.html',{'category_pictures':category_pictures} )
+
 
     
