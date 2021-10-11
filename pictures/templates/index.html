@@ -1,17 +1,26 @@
 {% extends 'base.html'%}
-
- {% block content %}
+{% block content %}
+ <style>
+    .container {
+      
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+      }
+    </style>
  <div class="container">
 <!-- Filter function for Category -->
 <main class="wrapper">
     <section class="section1">
-        <h1 style="color: rgb(68, 20, 20); text-align:center">Welcome to my Gallery</h1>
-        
+        <h1 style="text-align:center;color:#58B19F; text-shadow:2px 2px 1px grey">...Welcome to my Gallery...</h1><br>
+
+        <h3 style="text-align:center; color:#58B19F; text-shadow: 2px 1px 1px black;">“God creates the beauty. My camera and I are a witness.” <br>
+-Mark Denman</h3>
 
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="w3-dropdown-click">
-                    <button onclick="myFunction3()" class="w3-button  dropbtn" style="text-align:center; ">Filter by Categories</button>
+                    <button onclick="myFunction3()" class="w3-button  dropbtn" style="text-align:center; "><h2 style="text-align:center;color:#58B19F; text-shadow:2px 2px 1px grey">Filter by Categories</h2></button>
                     <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
                         {% for cat_pic in category %}
                         <a href="/category/{{ cat_pic.id}}" class="w3-bar-item w3-button"> <span style="color:#58B19F">{{ cat_pic.category_name}}</span> </a>
@@ -37,7 +46,7 @@
             <!-- Filter functions for Location -->
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="w3-dropdown-click">
-                    <button onclick="myFunction2()" class="w3-button  dropbtn" style="align-items: center;">Filter by Location</button>
+                    <button onclick="myFunction2()" class="w3-button  dropbtn" style="text-align: center;"><h2  style="text-align:center;color:#58B19F; text-shadow:2px 2px 1px grey">Filter by Location</h2></button>
                     <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
                         {% for location_pic in location %}
                         <a href="/location/{{ location_pic.id}}" class="w3-bar-item w3-button"><span style="color: #58B19F;">{{ location_pic.location_name}}</span>  </a>
@@ -64,7 +73,7 @@
     </section>
     <section class="section static">
         <div class="container">
-            <h1>THE GALLERY </h1>
+            <h1 style="text-align: center; color:#58B19F; text-shadow:1px 1px 1px black">THE GALLERY </h1>
             <div class="row pics" style="text-align: center;">
                 {% for pic in pictures %}
 
@@ -76,7 +85,8 @@
                         <img class=" img-responsive image2" width="450px" height="400px" src="{{pic.image.url}}"
                             alt="image">
                     </button> <br>
-                    <a class="btn btn-primary" href="/single_pic/{{pic.id}} ">More</a>
+                    <a class="btn" href="/single_pic/{{pic.id}} " style="background-color: #58B19F; border-radius:5%">
+    <span style="color: white;"> view image</span>  </a>
 
                 </div>
                 <script>
@@ -101,9 +111,9 @@
                 </div>
                 <div class="modal-body">
                     <img width="400px" class="img-responsive column" src=" {{pic.image.url}} " alt="img">
-                    <p>{{pic.description}}</p>
-                    <p>{{pic.category}}</p>
-                    <p> {{pic.location}} </p>
+                    <p>Description: {{pic.description}}</p>
+                    <p>Category: {{pic.category}}</p>
+                    <p>Location taken: {{pic.location}} </p>
                 </div>
                 <div class="modal-footer" style="text-align: center;">
                     <p>{{pic.author}}</p>
@@ -119,11 +129,6 @@
         $(window).load($('#myModal{{pic.id}}').appendTo('body'))
     </script>
     {% endfor %}
-
-
-    <!-- </div>
-</div>
-</div> -->
 
 </main>
 </div>

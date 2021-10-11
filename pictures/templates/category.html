@@ -4,9 +4,9 @@
     
     {% for single_pic in category_pictures %}
     <h1>{{single_pic.name}}</h1>
-    <h2>{{singe_pic.description}}</h2>
-    <h3>{{single_pic.category}}</h3>
-    <h3>{{single_pic.location}}</h3>
+    <h2>Description: {{singe_pic.description}}</h2>
+    <h3>Category: {{single_pic.category}}</h3>
+    <h3>Location: {{single_pic.location}}</h3>
     <img src="{{single_pic.image.url}}" alt="image" srcset="">
     <a href="/single_pic/{{single_pic.id}}"><button class="btn btn-primary"> more about image</button></a>
         {%endfor%}
