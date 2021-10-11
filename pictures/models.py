@@ -47,9 +47,9 @@ class Pictures(models.Model):
     
     @classmethod
     def search_picture(cls,term):
-        term = cls.objects.filter(name_icontains = term)
+        image = cls.objects.filter(name__icontains = term)
         
-        return term
+        return image
     
     @classmethod
     def picture_bylocation(cls,location):
