@@ -1,1 +1,1 @@
-web: gunicorn h-gallery.wsgi
+web: gunicorn gallery.wsgi
