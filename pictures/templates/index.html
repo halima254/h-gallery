@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="w3-dropdown-click">
-                    <button onclick="myFunction3()" class="w3-button  dropbtn" style="text-align:center; "><h2 style="text-align:center;color:#58B19F; text-shadow:2px 2px 1px grey">Filter by Categories</h2></button>
+                    <button onclick="myFunction3()" class="w3-button  dropbtn" style="text-align:center; "><h2 style="text-align:center;color:#58B19F; text-shadow:2px 2px 1px grey">Find Picture by Category</h2></button>
                     <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
                         {% for cat_pic in category %}
                         <a href="/category/{{ cat_pic.id}}" class="w3-bar-item w3-button"> <span style="color:#58B19F">{{ cat_pic.category_name}}</span> </a>
@@ -46,7 +46,7 @@
             <!-- Filter functions for Location -->
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="w3-dropdown-click">
-                    <button onclick="myFunction2()" class="w3-button  dropbtn" style="text-align: center;"><h2  style="text-align:center;color:#58B19F; text-shadow:2px 2px 1px grey">Filter by Location</h2></button>
+                    <button onclick="myFunction2()" class="w3-button  dropbtn" style="text-align: center;"><h2  style="text-align:center;color:#58B19F; text-shadow:2px 2px 1px grey">Find Picture by Location</h2></button>
                     <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
                         {% for location_pic in location %}
                         <a href="/location/{{ location_pic.id}}" class="w3-bar-item w3-button"><span style="color: #58B19F;">{{ location_pic.location_name}}</span>  </a>
