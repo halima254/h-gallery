@@ -32,10 +32,10 @@ As a user, i would like to:
 <ul> Heroku for Deployment</ul>
 
 ## Set Up Process
-Ensure you have installed all the requirements before trying to run the app.These are: python-django, django-bootstrap, Pillow and postgresql
-Git Clone the news-app from Github,open it in your preferred editor
-on your terminal, switch to virtual environment
-Run: python manage.py runserver ; this is to make the program excecutable.
+<ul>on your terminal, switch to virtual environment</ul>
+<ul>Ensure you have installed all the requirements before trying to run the app.These are: python-django, django-bootstrap, Pillow and postgresql</ul>
+<ul>Git Clone the news-app from Github,open it in your preferred editor</ul>
+<ul>Run: python manage.py runserver ; this is to make the program excecutable.<ul>
 view the app.
 
 Copyright 2021 | Halima Yahya
