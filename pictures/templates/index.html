@@ -5,16 +5,16 @@
 <!-- Filter function for Category -->
 <main class="wrapper">
     <section class="section1">
-        <h1 style="color: maroon; text-align:center">Welcome to my Gallery</h1>
+        <h1 style="color: rgb(68, 20, 20); text-align:center">Welcome to my Gallery</h1>
         
 
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="w3-dropdown-click">
-                    <button onclick="myFunction3()" class="w3-button  dropbtn" style="align-items: center;">Filter by Categories</button>
+                    <button onclick="myFunction3()" class="w3-button  dropbtn" style="text-align:center; ">Filter by Categories</button>
                     <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
                         {% for cat_pic in category %}
-                        <a href="/category/{{ cat_pic.id}}" class="w3-bar-item w3-button"> {{ cat_pic.category_name}} </a>
+                        <a href="/category/{{ cat_pic.id}}" class="w3-bar-item w3-button"> <span style="color:#58B19F">{{ cat_pic.category_name}}</span> </a>
                         <!-- <p>{{locationpic}}</p> -->
                         {% endfor %}
                     </div>
@@ -40,7 +40,7 @@
                     <button onclick="myFunction2()" class="w3-button  dropbtn" style="align-items: center;">Filter by Location</button>
                     <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
                         {% for location_pic in location %}
-                        <a href="/location/{{ location_pic.id}}" class="w3-bar-item w3-button"> {{ location_pic.location_name}} </a>
+                        <a href="/location/{{ location_pic.id}}" class="w3-bar-item w3-button"><span style="color: #58B19F;">{{ location_pic.location_name}}</span>  </a>
                         <p>{{locationpic}}</p>
                         {% endfor %}
                     </div>
@@ -89,10 +89,6 @@
             </div>
         </div>
     </section>
-
-
-
-
 
     <!-- Modal -->
     {% for pic in pictures %}
