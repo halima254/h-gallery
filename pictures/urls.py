@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^location/(\d+)', views.pictures_location,name='location'),
     url(r'^category/(\d+)', views.pictures_category,name='category'),
     url(r'^single_pic/(\d+)', views.single_picture,name='single_pic'),
-    url(r'^search/(\d+)', views.search_picture,name='search_results'),
+    url(r'^search/', views.search_picture,name='search_results'),
 ]
 
 if settings.DEBUG:

@@ -37,11 +37,11 @@ def single_picture(request,id):
 def search_picture(request):
     
     if 'image' in request.GET and request.GET['image']:
-        search_term = request.GET.get('image')
+        term = request.GET.get('image')
         search_image = Pictures.search_picture(term)
         message = f'{term}'
         
-        return render(request,'get_image.html',{'message':message, 'search_image':search_image})
+        return render(request,'get_image.html',{'message':message, 'image':search_image})
     
     else:
         message = 'Image not found'

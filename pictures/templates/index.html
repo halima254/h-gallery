@@ -1,53 +1,46 @@
-
+{% extends 'base.html'%}
 
  {% block content %}
+ <div class="container">
 <!-- Filter function for Category -->
 <main class="wrapper">
     <section class="section1">
-        <h1>Welcome to my Gallery</h1>
-        <p style="padding-bottom: 80px;">Memories in a Picture</p>
+        <h1 style="color: maroon; text-align:center">Welcome to my Gallery</h1>
+        
 
         <div class="row">
-            <div class="col-md-3 col-sm-3 "></div>
             <div class="col-md-3 col-sm-3 col-xs-6">
-                <div class="dropdown">
-                    <button onclick="myFunction1()" class=" w3-button dropbtn">Filter by Category</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        {% for category_pic in category %}
-                        <a href="/category/{ category_pic.id}}">{ category_pic.category_name}}</a> {% endfor %}
+                <div class="w3-dropdown-click">
+                    <button onclick="myFunction3()" class="w3-button  dropbtn" style="align-items: center;">Filter by Categories</button>
+                    <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
+                        {% for cat_pic in category %}
+                        <a href="/category/{{ cat_pic.id}}" class="w3-bar-item w3-button"> {{ cat_pic.category_name}} </a>
+                        <!-- <p>{{locationpic}}</p> -->
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+            <div class="col-md-3 col-sm-3 "></div>
 
-            <!-- Scripts for category filter functions -->
+            <!-- Scripts for location filter functions -->
             <script>
-                /* When the user clicks on the button, 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                toggle between hiding and showing the dropdown content */
-                function myFunction1() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
-
-                // Close the dropdown if the user clicks outside of it
-                window.onclick = function(event) {
-                    if (!event.target.matches('.dropbtn ')) {
-                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                        var i;
-                        for (i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.classList.contains('show')) {
-                                openDropdown.classList.remove('show');
-                            }
-                        }
+                function myFunction3() {
+                    var x = document.getElementById("Demo3");
+                    if (x.className.indexOf("w3-show") == -1) {
+                        x.className += " w3-show";
+                    } else {
+                        x.className = x.className.replace(" w3-show", "");
                     }
                 }
             </script>
+
             <!-- Filter functions for Location -->
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="w3-dropdown-click">
-                    <button onclick="myFunction2()" class="w3-button  dropbtn">Filter by Location</button>
+                    <button onclick="myFunction2()" class="w3-button  dropbtn" style="align-items: center;">Filter by Location</button>
                     <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
                         {% for location_pic in location %}
-                        <a href="/location/{ location_pic.id}}" class="w3-bar-item w3-button"> { location_pic.location_name}} </a>
+                        <a href="/location/{{ location_pic.id}}" class="w3-bar-item w3-button"> {{ location_pic.location_name}} </a>
                         <p>{{locationpic}}</p>
                         {% endfor %}
                     </div>
@@ -137,4 +130,5 @@
 </div> -->
 
 </main>
+</div>
 {%endblock %}
