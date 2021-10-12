@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pictures',
     'bootstrap3',
+    'cloudinary-storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
+
+CLOUDINARY_STORAGE ={
+    'CLOUD_NAME':'halima',
+    'API_KEY' :'229792583317487',
+    'API_SECRET':'8CdxT7SI-IuqKGMtzeVMMypJtQY',    
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
