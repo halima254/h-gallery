@@ -4,7 +4,7 @@
 My gallery is a website where one can view images based on location or categories and its features. One can also copy the link to the image he/she is interested in.
 
 ## Developed by:
-Halima Yahya
+Halima Yahya   <strong>Contact Email:</strong>halima.yahya@student.moringaschool.com
 
 ## User Stories:
 As a user, i would like to:
@@ -37,6 +37,10 @@ As a user, i would like to:
 <ul>Git Clone the news-app from Github,open it in your preferred editor</ul>
 <ul>Run: python manage.py runserver ; this is to make the program excecutable.<ul>
 view the app.
+
+# Screenshots
+![My Gallery](pictures/static/images/allpics.png)
+![View Single Picture](pictures/static/images/nature.png)
 
 # licence
 Copyright 2021 | Halima Yahya
